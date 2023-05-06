@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR,'db.sqlite')
-DATABASE = {'default':config('DATABASE_URL',default=default_dburl,cast=dburl ),}
+DATABASE = {'default': config('DATABASE_URL',default=default_dburl,cast=dburl), }
 
 
 # Password validation
