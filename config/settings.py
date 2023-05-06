@@ -14,7 +14,7 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 import os
-from dj_database_url import parse
+from dj_database_url import parse as dburl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # }
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR,'db.sqlite')
-DATABASE = {'default':config('DATABASE_URL',default=default_dburl,cast=parse )}
+DATABASE = {'default':config('DATABASE_URL',default=default_dburl,cast=dburl ),}
 
 
 # Password validation
